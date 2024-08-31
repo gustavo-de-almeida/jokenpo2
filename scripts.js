@@ -47,7 +47,7 @@ function choiceHandal(event) {
       }, 50);
       
     }
-    else if(finalResult === "RS"|| finalResult=== "SP" || finalResult==="PR" ){
+    else if(finalResult === "SR"|| finalResult=== "PS" || finalResult==="RP" ){
       setTimeout(() => {
          result.innerHTML ="Computador ganhou"
       main.style.boxShadow ='0 5px 10px rgba(255, 0, 0, 0.6)'
