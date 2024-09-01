@@ -4,21 +4,10 @@ const result = document.querySelector("h1");
 const userResult = document.querySelector(".player img")
 const machineResult = document.querySelector(".machine img")
 const main = document.querySelector("main")
-const computerImgs = ['./assets/papel.png','./assets/pedra.png','./assets/tesoura.png',]
+const computerImgs = ['./assets/papel.png','./assets/pedra.png','./assets/tesoura.png']
 
 
-const winner ={
-  RR:"Empate" 
-  ,
-  RS:"Voçê",
-  RP:"Computador",
-  PP:"Empate",
-  PR:"Voçê",
-  PS:"Computador",
-  SS:"Empate",
-  SP:"Você",
-  SR:"Computador"
-}
+
 
 
 
@@ -32,37 +21,34 @@ function choiceHandal(event) {
   setTimeout(() => {
     conteiner.classList.remove("start");
     userResult.src = computerImgs[clickedIndex]
-    
-    
-    const randamNumber = Math.floor( Math.random() * computerImgs.length)
+  const randamNumber = Math.floor( Math.random() * computerImgs.length)
     machineResult.src = computerImgs[randamNumber]
-    const userValue = ['P','R','S'][clickedIndex]
-    const computerValue =['P','R','S'][randamNumber]
-    const userComputerResult = userValue + computerValue 
-    const finalResult = winner[userComputerResult]
-    if (userValue === computerValue) {
+    
+    
+    
+   
+    if(clickedIndex === 0 && randamNumber=== 1 || clickedIndex === 2 && randamNumber === 0 || clickedIndex === 1 && randamNumber=== 2  ){
+      setTimeout(() => {
+        result.innerHTML ="voce ganhou"
+     main.style.boxShadow ='0 5px 10px rgb(0,250,0,6)'
+     }, 50);
+      
+    }else if(clickedIndex === randamNumber  ){
+     
       setTimeout(() => {
         result.innerHTML ="Empate"
       main.style.boxShadow ='0 5px 10px rgb(255, 238, 0)'
       }, 50);
-      
-    }
-    else if(finalResult === "RS"|| finalResult=== "SP" || finalResult==="PR" ){
-      setTimeout(() => {
-         result.innerHTML ="Computador ganhou"
-      main.style.boxShadow ='0 5px 10px rgba(255, 0, 0, 0.6)'
-      }, 50);
      
-    } else{
+    }else{
       setTimeout(() => {
-        result.innerHTML ="Você ganhou"
-      main.style.boxShadow ='0 5px 10px rgba(43, 255, 0, 0.6)'
-      }, 50);
+        result.innerHTML ="Computador ganhou"
+     main.style.boxShadow ='0 5px 10px rgba(255, 0, 0, 0.6)'
+     }, 50);
       
 
-    }
-    
-  }, 2000);
+  }},2000)
+ 
 }
 
 
