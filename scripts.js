@@ -38,19 +38,7 @@ function choiceHandal(event) {
       setTimeout(() => {
         result.innerHTML ="Empate"
       main.style.boxShadow ='0 5px 10px rgb(255, 238, 0)'
-      }, 50);
-<<<<<<< HEAD
-=======
-      
-    }
-    else if(finalResult === "SR"|| finalResult=== "PS" || finalResult==="RP" ){
-      setTimeout(() => {
-         result.innerHTML ="Computador ganhou"
-      main.style.boxShadow ='0 5px 10px rgba(255, 0, 0, 0.6)'
-      }, 50);
->>>>>>> 9064f88ad5a7926d8ba8a7df46572ffd3af83057
-     
-    }else{
+      }, 50);}else{
       setTimeout(() => {
         result.innerHTML ="Computador ganhou"
      main.style.boxShadow ='0 5px 10px rgba(255, 0, 0, 0.6)'
